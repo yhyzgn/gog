@@ -42,7 +42,7 @@ func (cw *ConsoleWriter) Write(info *LogInfo, data []byte) (n int, err error) {
 	return cw.out.Write(data)
 }
 
-// 关闭输出流
+// Close 关闭输出流
 func (cw *ConsoleWriter) Close() error {
 	return cw.out.Close()
 }

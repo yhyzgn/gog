@@ -69,6 +69,7 @@ func Convert(value ...interface{}) string {
 	return strings.Join(result, "")
 }
 
+// ToString ...
 func ToString(i interface{}) (string, error) {
 	i = indirectToStringerOrError(i)
 

@@ -81,7 +81,7 @@ func CallSkip(skip int) {
 	gog.CallSkip(skip)
 }
 
-// Level 设置日志打印的最低优先级
+// SetLevel 设置日志打印的最低优先级
 func SetLevel(lvl Level) {
 	gog.Level(lvl)
 }

@@ -278,7 +278,7 @@ func (g *Gog) Write(tag string, lvl Level, body ...interface{}) {
 	}
 
 	bodyFormat := ""
-	for _ = range body {
+	for range body {
 		bodyFormat += "{}"
 	}
 	info := &LogInfo{

@@ -54,7 +54,7 @@ func NewJSONFormatter() *JSONFormatter {
 	return newJSONFormatter(false)
 }
 
-// NewJSONPretty 创建 json 格式化对象
+// NewJSONPrettyFormatter 创建 json 格式化对象
 func NewJSONPrettyFormatter() *JSONFormatter {
 	return newJSONFormatter(true)
 }
