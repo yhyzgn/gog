@@ -40,13 +40,13 @@ func (c *Config) SetFormatter(ftr Formatter) {
 }
 
 // SetWriter 设置输出器
-func (c *Config) SetWriter(wtr Writer) {
-	c.Writers = []Writer{wtr}
+func (c *Config) SetWriter(wtr ...Writer) {
+	c.Writers = append([]Writer{}, wtr...)
 }
 
 // AddWriter 添加输出器
-func (c *Config) AddWriter(wtr Writer) {
-	c.Writers = append(c.Writers, wtr)
+func (c *Config) AddWriter(wtr ...Writer) {
+	c.Writers = append(c.Writers, wtr...)
 }
 
 // ResetWriter 重置输出器

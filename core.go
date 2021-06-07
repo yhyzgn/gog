@@ -31,7 +31,7 @@ import (
 )
 
 const (
-	queueSize = 100
+	queueSize = 1000
 )
 
 // Gog 日志处理器
@@ -75,18 +75,18 @@ func (g *Gog) SetFormatter(ftr Formatter) *Gog {
 }
 
 // SetWriter 设置输出器
-func (g *Gog) SetWriter(wtr Writer) *Gog {
+func (g *Gog) SetWriter(wtr ...Writer) *Gog {
 	g.mu.Lock()
 	defer g.mu.Unlock()
-	g.config.SetWriter(wtr)
+	g.config.SetWriter(wtr...)
 	return g
 }
 
 // AddWriter 添加输出器
-func (g *Gog) AddWriter(wtr Writer) *Gog {
+func (g *Gog) AddWriter(wtr ...Writer) *Gog {
 	g.mu.Lock()
 	defer g.mu.Unlock()
-	g.config.AddWriter(wtr)
+	g.config.AddWriter(wtr...)
 	return g
 }
 

@@ -42,27 +42,27 @@ func WithConnectors(item, connector string, length int) string {
 	return sb.String()
 }
 
-// LevelStylus 给不同 level 的日志加上色彩风格
-func LevelStylus(lvl Level) *golus.Stylus {
-	stylus := golus.NewStylus()
+// Colorful 给不同 level 的日志加上色彩风格
+func Colorful(lvl Level) *golus.Stylus {
+	stylus := golus.New()
 	switch lvl {
 	case TRACE:
-		stylus.SetFontColor(golus.FontPurple)
+		stylus.FontColor(golus.FontMagenta)
 		break
 	case DEBUG:
-		stylus.SetFontColor(golus.FontBlueGreen)
+		stylus.FontColor(golus.FontCyan)
 		break
 	case INFO:
-		stylus.SetFontColor(golus.FontGreen)
+		stylus.FontColor(golus.FontGreen)
 		break
 	case WARN:
-		stylus.SetFontColor(golus.FontYellow)
+		stylus.FontColor(golus.FontYellow)
 		break
 	case ERROR:
-		stylus.SetFontColor(golus.FontRed)
+		stylus.FontColor(golus.FontRed)
 		break
 	case FATAL:
-		stylus.SetFontColor(golus.FontRed).SetFontStyle(golus.StyleBold)
+		stylus.FontColor(golus.FontRed).FontStyle(golus.StyleBold)
 		break
 	}
 	return stylus

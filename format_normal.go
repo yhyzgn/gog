@@ -54,8 +54,8 @@ func NewNormalColorfulFormatter() *NormalFormatter {
 func (cf *NormalFormatter) Format(level Level, levelName string, info *LogInfo) ([]byte, error) {
 	var sb strings.Builder
 	sb.WriteString(info.Time.Format(DatePattern))
-	sb.WriteString(WithConnectors(levelName, "-", 8))
-	sb.WriteString(WithConnectors(info.File, "-", util.If(info.ShortFile, FileLengthRel, FileLengthAbs).(int)))
+	sb.WriteString(WithConnectors(levelName, " ", 8))
+	sb.WriteString(WithConnectors(info.File, " ", util.If(info.ShortFile, FileLengthRel, FileLengthAbs).(int)))
 	sb.WriteString(":" + util.FillSuffix(strconv.Itoa(info.Line), " ", 4))
 	sb.WriteString("(" + info.Func + ")")
 	if info.Tag != "" {
@@ -65,7 +65,7 @@ func (cf *NormalFormatter) Format(level Level, levelName string, info *LogInfo) 
 
 	res := sb.String()
 	if cf.Colorful {
-		res = LevelStylus(level).Apply(res)
+		res = Colorful(level).Apply(res)
 	}
 	return []byte(res + "\n"), nil
 }

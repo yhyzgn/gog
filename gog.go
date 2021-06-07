@@ -59,13 +59,13 @@ func SetFormatter(ftr Formatter) {
 }
 
 // SetWriter 设置输出器
-func SetWriter(wtr Writer) {
-	gog.SetWriter(wtr)
+func SetWriter(wtr ...Writer) {
+	gog.SetWriter(wtr...)
 }
 
 // AddWriter 添加输出器
-func AddWriter(wtr Writer) {
-	gog.AddWriter(wtr)
+func AddWriter(wtr ...Writer) {
+	gog.AddWriter(wtr...)
 }
 
 // ResetWriters 重置输出器

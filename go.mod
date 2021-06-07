@@ -1,5 +1,5 @@
 module github.com/yhyzgn/gog
 
-go 1.14
+go 1.16
 
-require github.com/yhyzgn/golus v1.0.3
+require github.com/yhyzgn/golus v1.1.1
