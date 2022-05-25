@@ -37,6 +37,8 @@ func Test(t *testing.T) {
 		AddWriter(&testWriter{})
 	}
 
+	SetLevel(INFO)
+
 	Async(true)
 
 	Trace("Trace", 1, 3, 345, true)
